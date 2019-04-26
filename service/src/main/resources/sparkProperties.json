@@ -1,14 +1,14 @@
 {
-  "file": "hdfs://pre-bdp01:8020/griffin/griffin-measure.jar",
+  "file": "hdfs://cootek/griffin/griffin-measure.jar",
   "className": "org.apache.griffin.measure.Application",
   "name": "hadoop",
-  "queue": "default",
-  "numExecutors": 2,
+  "queue": "root.bdp-root.etl.hourlyetl.normal",
+  "numExecutors": 8,
   "executorCores": 1,
   "driverMemory": "1g",
-  "executorMemory": "1g",
+  "executorMemory": "4g",
   "conf": {
-    "spark.yarn.dist.files": "hdfs://pre-bdp01:8020/home/spark_conf/hive-site.xml"
+    "spark.yarn.dist.files": "hdfs://cootek/griffin/spark_conf/hive-site.xml"
   },
   "files": [
   ]

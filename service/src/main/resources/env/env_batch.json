@@ -12,7 +12,7 @@
     {
       "type": "HDFS",
       "config": {
-        "path": "hdfs://pre-bdp01:8020/griffin/persist",
+        "path": "hdfs://cootek/griffin/persist",
         "max.persist.lines": 10000,
         "max.lines.per.file": 10000
       }
@@ -21,7 +21,7 @@
       "type": "ELASTICSEARCH",
       "config": {
         "method": "post",
-        "api": "http://pre-bdp03:9200/griffin/accuracy",
+        "api": "http://stream03.uscasv2.cootek.com:9200/griffin/accuracy",
         "connection.timeout": "1m",
         "retry": 10
       }

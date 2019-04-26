@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>dfs.name.dir</name>
+		<value>/imagedata/hadoop-name1,/imagedata2/hadoop-name2,/imagedata3/hadoop-name3</value>
+	</property>
+
+
+	<property>
+		<name>dfs.blocksize</name>
+		<value>268435456</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.handler.count</name>
+		<value>100</value>
+	</property>
+
+	<property>
+		<name>fs.permissions.umask-mode</name>
+		<value>u=rwx,g=rwx,o=</value>
+	</property>
+
+	<property>
+		<name>dfs.hosts.exclude</name>
+		<value>/usr/local/hadoop-2.6.3/etc/hadoop/dfs.exclude</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.fsdataset.volume.choosing.policy</name>
+		<value>org.apache.hadoop.hdfs.server.datanode.fsdataset.AvailableSpaceVolumeChoosingPolicy</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.available-space-volume-choosing-policy.balanced-space-preference-fraction</name>
+		<value>1.0f</value>
+	</property>
+
+	<!-- hadoop ha config -->
+	<property>
+		<name>dfs.nameservices</name>
+		<value>cootek</value>
+	</property>
+
+	<property>
+		<name>dfs.ha.namenodes.cootek</name>
+		<value>nn1,nn2</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.rpc-address.cootek.nn1</name>
+		<value>hadoop-namenode-001.uscasv2.cootek.com:9000</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.rpc-address.cootek.nn2</name>
+		<value>hadoop-namenode-002.uscasv2.cootek.com:9000</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.shared.edits.dir</name>
+		<value>qjournal://hadoop-namenode-001.uscasv2.cootek.com:8485;hadoop-namenode-002.uscasv2.cootek.com:8485;hadoop-datanode-001.uscasv2.cootek.com:8485/cootek</value>
+	</property>
+
+	<property>
+		<name>dfs.journalnode.edits.dir</name>
+		<value>/hadoop-namenode/data/journal</value>
+	</property>
+
+	<property>
+		<name>dfs.ha.automatic-failover.enabled</name>
+		<value>false</value>
+	</property>
+
+	<property>
+		<name>dfs.client.failover.proxy.provider.cootek</name>
+		<value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+	</property>
+
+	<property>
+		<name>dfs.replication</name>
+		<value>3</value>
+	</property>
+
+	<property>
+		<name>dfs.ha.fencing.methods</name>
+		<value>shell(/bin/true)</value>
+	</property>
+	<property>
+		<name>dfs.ha.fencing.ssh.private-key-files</name>
+		<value>/home/hadoop/.ssh/id_rsa</value>
+	</property>
+	<property>
+		<name>dfs.ha.fencing.ssh.connect-timeout</name>
+		<value>30000</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.data.dir</name>
+		<value>file:///hadoop_data1/,file:///hadoop_data2/,file:///hadoop_data3/,file:///hadoop_data4/,file:///hadoop_data5/,file:///hadoop_data6/,file:///hadoop_data7/</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.balance.bandwidthPerSec</name>
+		<value>31457280</value>
+	</property>
+
+	<property>
+		<name>fs.permissions.umask-mode</name>
+		<value>u=rwx,g=rwx,o=</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.max.transfer.threads</name>
+		<value>8192</value>
+	</property>
+	<property>
+		<name>dfs.datanode.kerberos.principal</name>
+		<value>hadoop/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+	<property>
+		<name>dfs.datanode.keytab.file</name>
+		<value>/etc/security/hdfs.keytab</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.kerberos.principal</name>
+		<value>hadoop/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+	<property>
+		<name>dfs.namenode.keytab.file</name>
+		<value>/etc/security/hdfs.keytab</value>
+	</property>
+
+	<property>
+		<name>dfs.block.access.token.enable</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>dfs.datanode.data.dir.perm</name>
+		<value>700</value>
+	</property>
+	<!-- zailai -->
+	<property>
+		<name>dfs.namenode.kerberos.https.principal</name>
+		<value>HTTP/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+	<property>
+		<name>dfs.datanode.address</name>
+		<value>0.0.0.0:61004</value>
+	</property>
+	<property>
+		<name>dfs.datanode.http.address</name>
+		<value>0.0.0.0:61006</value>
+	</property>
+	<property>
+		<name>dfs.http.policy</name>
+		<value>HTTP_AND_HTTPS</value>
+	</property>
+	<property>
+		<name>dfs.data.transfer.protection</name>
+		<value>integrity</value>
+	</property>
+	<property>
+		<name>dfs.datanode.kerberos.https.principal</name>
+		<value>HTTP/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+	<!-- jiade -->
+	<property>
+		<name>dfs.journalnode.keytab.file</name>
+		<value>/etc/security/hdfs.keytab</value>
+	</property>
+	<property>
+		<name>dfs.journalnode.kerberos.principal</name>
+		<value>hadoop/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+	<property>
+		<name>dfs.journalnode.kerberos.internal.spnego.principal</name>
+		<value>HTTP/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+
+	<property>
+		<name>dfs.webhdfs.enabled</name>
+		<value>true</value>
+	</property>
+
+	<property>
+		<name>dfs.permissions.supergroup</name>
+		<value>hadoop</value>
+	</property>
+
+	<property>
+		<name>dfs.web.authentication.kerberos.principal</name>
+		<value>HTTP/_HOST@USCASV2.COOTEK.COM</value>
+	</property>
+	<property>
+		<name>dfs.web.authentication.kerberos.keytab</name>
+		<value>/etc/security/hdfs.keytab</value>
+	</property>
+	<property>
+		<name>hadoop.proxyuser.httpfs.hosts</name>
+		<value>*</value>
+	</property>
+	<property>
+		<name>hadoop.proxyuser.httpfs.groups</name>
+		<value>*</value>
+	</property>
+	<property>
+		<name>dfs.image.transfer.timeout</name>
+		<value>600000</value>
+	</property>
+
+	<property>
+		<name>dfs.image.transfer.bandwidthPerSec</name>
+		<value>104857600</value>
+	</property>
+	<!-- for qjournal -->
+	<property>
+		<name>dfs.qjournal.start-segment.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.prepare-recovery.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.accept-recovery.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.prepare-recovery.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.accept-recovery.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.finalize-segment.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.select-input-streams.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.get-journal-state.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.new-epoch.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.qjournal.write-txns.timeout.ms</name>
+		<value>6000000</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.du.reserved</name>
+		<!-- cluster variant -->
+		<value>236223201280</value>
+		<description>Reserved space in bytes per volume. Always leave this much space free for non dfs use.
+		</description>
+	</property>
+
+	<property>
+		<name>dfs.encryption.key.provider.uri</name>
+		<value>kms://http@kms01.uscasv2.cootek.com:16000/kms</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.balance.max.concurrent.moves</name>
+		<value>50</value>
+	</property>
+
+	<!-- add for new 20180922-->
+
+	<property>
+		<name>dfs.datanode.socket.write.timeout</name>
+		<value>0</value>
+	</property>
+	<property>
+		<name>dfs.socket.timeout</name>
+		<value>180000</value>
+	</property>
+	<property>
+		<name>dfs.datanode.handler.count</name>
+		<value>40</value>
+	</property>
+	<property>
+		<name>dfs.datanode.failed.volumes.tolerated</name>
+		<value>2</value>
+	</property>
+	<property>
+		<name>dfs.datanode.directoryscan.threads</name>
+		<value>50</value>
+	</property>
+	<property>
+		<name>dfs.namenode.handler.count</name>
+		<value>128</value>
+	</property>
+
+	<property>
+		<name>dfs.blockreport.initialDelay</name>
+		<value>120</value>
+	</property>
+
+	<!-- add for 20181011 -->
+	<property>
+		<name>dfs.client.read.shortcircuit</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>dfs.domain.socket.path</name>
+		<value>/var/run/hadoop-hdfs/dn._PORT</value>
+	</property>
+	<property>
+		<name>dfs.client.read.shortcircuit.streams.cache.size</name>
+		<value>1024</value>
+	</property>
+	<property>
+		<name>dfs.datanode.hdfs-blocks-metadata.enabled</name>
+		<value>true</value>
+	</property>
+
+	<property>
+		<name>dfs.client.file-block-storage-locations.timeout.millis</name>
+		<value>60000</value>
+	</property>
+	<property>
+		<name>fs.protected.directories</name>
+		<value>/production_ct/,/data/ad,/data/ai_data,/data/dw,/data/external,/data/gaia,/data/gct_data,/data/imp_data,/data/rawlog</value>
+	</property>
+
+	<property>
+		<name>dfs.namenode.balancer.request.standby</name>
+		<value>true</value>
+	</property>
+
+</configuration>

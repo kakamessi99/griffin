@@ -18,6 +18,52 @@
 <configuration>
     <!-- WARNING!!! This file is auto generated for documentation purposes ONLY! -->
     <!-- WARNING!!! Any changes you make to this file will be ignored by Hive.   -->
-    <!-- WARNING!!! You must make your changes in hive-site.xml instead.         -->
+    <!-- WARNING!!! You must make your changes in hive-site.xml.bak instead.         -->
     <!-- Hive Execution Parameters -->
+
+
+    <!-- Operation log  -->
+    <!--<property>
+        <name>hive.server2.logging.operation.log.location</name>
+        <value>/tmp/hivelog/operation_logs</value>
+    </property>
+
+    <property>
+        <name>hive.async.log.enabled</name>
+        <value>false</value>
+    </property>
+
+    &lt;!&ndash; thrift 端口 &ndash;&gt;
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10001</value>
+    </property>
+
+    <property>
+        <name>fs.hdfs.impl.disable.cache</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>fs.file.impl.disable.cache</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.session.history.enabled</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.server2.metrics.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.service.metrics.reporter</name>
+        <value>JMX</value>
+    </property>
+    <property>
+        <name>hive.service.metrics.class</name>
+        <value>org.apache.hadoop.hive.common.metrics.metrics2.CodahaleMetrics</value>
+    </property>-->
+
 </configuration>

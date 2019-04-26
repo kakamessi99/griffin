@@ -20,4 +20,383 @@
     <!-- WARNING!!! Any changes you make to this file will be ignored by Hive.   -->
     <!-- WARNING!!! You must make your changes in hive-site.xml instead.         -->
     <!-- Hive Execution Parameters -->
+    <!--<property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://bdp-mysql01.uscasv2.cootek.com/hive?characterEncoding=UTF-8</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>hive-user</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>J2q1mbVBRMSHvucC</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://192.168.190.5:9083</value>
+    </property>
+
+    <property>
+        <name>mapred.min.split.size.per.node</name>
+        <value>100000000</value>
+    </property>
+    <property>
+        <name>mapred.min.split.size.per.rack</name>
+        <value>100000000</value>
+    </property>
+    <property>
+        <name>hive.merge.mapfiles</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.merge.mapredfiles</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.merge.smallfiles.avgsize</name>
+        <value>100000000</value>
+    </property>
+    <property>
+        <name>hive.merge.size.per.task</name>
+        <value>512000000</value>
+    </property>
+    <property>
+        <name>hive.metastore.kerberos.keytab.file</name>
+        <value>/home/hadoop/keytab/azkaban01.uscasv2.cootek.com.service.keytab</value>
+    </property>
+    <property>
+        <name>hive.metastore.kerberos.principal</name>
+        <value>hadoop/azkaban01.uscasv2.cootek.com@USCASV2.COOTEK.COM</value>
+    </property>
+    <property>
+        <name>hive.metastore.sasl.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.server2.enable.doAs</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.server2.authentication.kerberos.keytab</name>
+        <value>/home/hadoop/keytab/azkaban01.uscasv2.cootek.com.service.keytab</value>
+    </property>
+    <property>
+        <name>hive.server2.authentication.kerberos.principal</name>
+        <value>hadoop/azkaban01.uscasv2.cootek.com@USCASV2.COOTEK.COM</value>
+    </property>
+    <property>
+        <name>hive.server2.authentication</name>
+        <value>CUSTOM</value>
+    </property>
+    <property>
+        <name>hive.server2.custom.authentication.class</name>
+        <value>org.apache.hadoop.hive.contrib.auth.CustomPasswdAuthenticator</value>
+    </property>
+    <property>
+        <name>hive.exec.reducers.bytes.per.reducer</name>
+        <value>500000000</value>
+    </property>
+    <property>
+        <name>hive.mapred.mode</name>
+        <value>nonstrict</value>
+    </property>
+    <property>
+        <name>hive.exec.reducers.max</name>
+        <value>999</value>
+    </property>
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>/data/internal</value>
+    </property>
+
+    <property>
+        <name>hive.support.concurrency</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.lock.numretries</name>
+        <value>100</value>
+    </property>
+
+    <property>
+        <name>hive.unlock.numretries</name>
+        <value>10</value>
+    </property>
+    <property>
+        <name>dfs.datanode.delete.permit</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.lock.sleep.between.retries</name>
+        <value>20</value>
+    </property>
+
+
+    <property>
+        <name>hive.zookeeper.quorum</name>
+        <value>bdp-zk01.uscasv2.cootek.com,bdp-zk02.uscasv2.cootek.com,bdp-zk03.uscasv2.cootek.com</value>
+    </property>
+
+    <property>
+        <name>hive.zookeeper.session.timeout</name>
+        <value>600000</value>
+    </property>
+
+    <property>
+        <name>hive.zookeeper.namespace</name>
+        <value>hive_zookeeper_namespace</value>
+    </property>
+
+
+    <property>
+        <name>hive.limit.row.max.size</name>
+        <value>100000</value>
+    </property>
+
+    <property>
+        <name>hive.security.authorization.enabled</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>hive.security.authorization.task.factory</name>
+        <value>org.apache.hadoop.hive.ql.parse.authorization.HiveAuthorizationTaskFactoryImpl</value>
+    </property>
+
+    <property>
+        <name>hive.security.authorization.manager</name>
+        <value>org.apache.hadoop.hive.ql.security.authorization.DefaultHiveAuthorizationProvider</value>
+    </property>
+
+    <property>
+        <name>hive.security.authorization.createtable.owner.grants</name>
+        <value>ALL</value>
+    </property>
+
+
+    <property>
+        <name>hive.semantic.analyzer.hook</name>
+        <value>com.hook.hive.plugin.AuthHook,com.hook.hive.plugin.CreateTableHook</value>
+    </property>
+
+    <property>
+        <name>hive.exec.post.hooks</name>
+        <value>org.apache.hadoop.hive.ql.hooks.QuerySqlToMysqlHook</value>
+    </property>
+
+    &lt;!&ndash;
+    <property>
+      <name>hive.aux.jars.path</name>
+      <value>/home/hadoop/platform/auxlib</value>
+    </property>
+    &ndash;&gt;
+    &lt;!&ndash;<property>
+       <name>io.compression.codecs</name>
+       <value>org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
+    </property> &ndash;&gt;
+
+    <property>
+        <name>hive.exec.compress.output</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>mapred.output.compression.codec</name>
+        <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+    </property>
+    <property>
+        <name>mapred.output.compression.type</name>
+        <value>BLOCK</value>
+    </property>
+
+    <property>
+        <name>hive.exec.compress.intermediate</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.intermediate.compression.codec</name>
+        <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+    </property>
+    <property>
+        <name>hive.intermediate.compression.type</name>
+        <value>BLOCK</value>
+    </property>
+    <property>
+        <name>hive.mapred.num.threshold</name>
+        <value>15000</value>
+    </property>
+
+
+    <property>
+        <name>hive.exec.orc.default.compress</name>
+        <value>SNAPPY</value>
+    </property>
+
+    <property>
+        <name>hive.cli.print.current.db</name>
+        <value>true</value>
+    </property>
+    &lt;!&ndash;hive query log&ndash;&gt;
+    <property>
+        <name>hive.query.history.connectionstring</name>
+        <value>jdbc:mysql://bdp-mysql01.uscasv2.cootek.com/query_log</value>
+    </property>
+    <property>
+        <name>hive.query.history.userName</name>
+        <value>hive-user</value>
+    </property>
+    <property>
+        <name>hive.query.history.Password</name>
+        <value>J2q1mbVBRMSHvucC</value>
+    </property>
+    <property>
+        <name>hive.querylog.location</name>
+        <value>/tmp/hivelog/${user.name}</value>
+    </property>
+
+    <property>
+        <name>hive.conf.restricted.list</name>
+        <value>
+            hive.security.authenticator.manager,hive.security.authorization.manager,hive.security.authorization.enabled
+        </value>
+    </property>
+
+    <property>
+        <name>hive.default.fileformat</name>
+        <value>ORCFile</value>
+    </property>
+
+    <property>
+        <name>hive.stats.autogather</name>
+        <value>true</value>
+    </property>
+
+    &lt;!&ndash;close cbo&ndash;&gt;
+    <property>
+        <name>hive.cbo.enable</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>hive.auto.convert.join</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>mapreduce.map.memory.mb</name>
+        <value>3072</value>
+    </property>
+
+    <property>
+        <name>mapreduce.map.java.opts</name>
+        <value>-Xmx2457m -Xms2457m -Xmn384m -XX:SurvivorRatio=6 -XX:MaxPermSize=128m</value>
+    </property>
+
+    <property>
+        <name>hive.exec.stagingdir</name>
+        <value>/tmp/hive-stagingdir/hive</value>
+    </property>
+    <property>
+        <name>hive.exec.scratchdir</name>
+        <value>/tmp/hive-scratchdir/</value>
+    </property>
+
+    <property>
+        <name>hive.warehouse.subdir.inherit.perms</name>
+        <value>false</value>
+    </property>
+    &lt;!&ndash; support hive parallelism&ndash;&gt;
+
+    <property>
+        <name>hive.exec.parallel</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.connect.retries</name>
+        <value>10</value>
+        <description>Number of retries while opening a connection to metastore</description>
+    </property>
+    <property>
+        <name>hive.metastore.failure.retries</name>
+        <value>25</value>
+        <description>Number of retries upon failure of Thrift metastore calls</description>
+    </property>
+    <property>
+        <name>hive.metastore.client.connect.retry.delay</name>
+        <value>6s</value>
+        <description>
+            Expects a time value with unit (d/day, h/hour, m/min, s/sec, ms/msec, us/usec, ns/nsec), which is sec if not
+            specified.
+            Number of seconds for the client to wait between consecutive connection attempts
+        </description>
+    </property>
+    <property>
+        <name>hive.metastore.client.socket.timeout</name>
+        <value>600s</value>
+        <description>
+            Expects a time value with unit (d/day, h/hour, m/min, s/sec, ms/msec, us/usec, ns/nsec), which is sec if not
+            specified.
+            MetaStore Client socket timeout in seconds
+        </description>
+    </property>
+
+    <property>
+        <name>hive.vectorized.execution.enabled</name>
+        <value>false</value>
+        <description>
+            This flag controls the vectorized mode of query execution as documented in HIVE-4160. (As of Hive 0.13.0.)
+        </description>
+    </property>-->
+
+    <!-- <property>
+       <name>javax.jdo.option.ConnectionDriverName</name>
+       <value>com.mysql.jdbc.Driver</value>
+   </property>
+
+   <property>
+       <name>javax.jdo.option.ConnectionURL</name>
+       <value>jdbc:mysql://bdp-mysql02.uscasv2.cootek.com/hive?characterEncoding=UTF-8</value>
+   </property>
+
+   <property>
+       <name>javax.jdo.option.ConnectionUserName</name>
+       <value>hive-user</value>
+   </property>
+
+   <property>
+       <name>javax.jdo.option.ConnectionPassword</name>
+       <value>J2q1mbVBRMSHvucC</value>
+   </property> -->
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://192.168.190.5:9083</value>
+    </property>
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.metastore.kerberos.keytab.file</name>
+        <value>/home/hadoop/keytab/azkaban01.uscasv2.cootek.com.service.keytab</value>
+    </property>
+    <property>
+        <name>hive.metastore.kerberos.principal</name>
+        <value>hadoop/azkaban01.uscasv2.cootek.com@USCASV2.COOTEK.COM</value>
+    </property>
+    <property>
+        <name>hive.metastore.sasl.enabled</name>
+        <value>true</value>
+    </property>
+
 </configuration>

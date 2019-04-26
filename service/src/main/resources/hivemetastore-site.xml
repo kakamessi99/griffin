@@ -18,6 +18,57 @@
 <configuration>
     <!-- WARNING!!! This file is auto generated for documentation purposes ONLY! -->
     <!-- WARNING!!! Any changes you make to this file will be ignored by Hive.   -->
-    <!-- WARNING!!! You must make your changes in hive-site.xml instead.         -->
+    <!-- WARNING!!! You must make your changes in hive-site.xml.bak instead.         -->
     <!-- Hive Execution Parameters -->
+   <!-- <property>
+        <name>hive.metastore.server.min.threads</name>
+        <value>200</value>
+        <description>Minimum number of worker threads in the Thrift server's pool.</description>
+    </property>
+
+    <property>
+        <name>hive.metastore.server.max.threads</name>
+        <value>4000</value>
+        <description>Maximum number of worker threads in the Thrift server's pool.</description>
+    </property>
+
+    <property>
+        <name>hive.warehouse.subdir.inherit.perms</name>
+        <value>false</value>
+        <description>child directory inherit parents director's permission</description>
+    </property>
+    &lt;!&ndash;jdo connection error retry&ndash;&gt;
+    <property>
+        <name>hive.hmshandler.retry.attempts</name>
+        <value>3</value>
+    </property>
+    <property>
+        <name>hive.hmshandler.retry.interval</name>
+        <value>1000ms</value>
+    </property>
+
+    <property>
+        <name>datanucleus.connectionPool.maxPoolSize</name>
+        <value>100</value>
+    </property>
+    <property>
+        <name>hive.metastore.metrics.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.service.metrics.reporter</name>
+        <value>JMX</value>
+    </property>
+    <property>
+        <name>hive.service.metrics.class</name>
+        <value>org.apache.hadoop.hive.common.metrics.metrics2.CodahaleMetrics</value>
+    </property>
+    <property>
+        <name>hive.metastore.client.socket.timeout</name>
+        <value>500</value>
+    </property>-->
+    <!--<property>-->
+        <!--<name>hive.metastore.pre.event.listeners</name>-->
+        <!--<value>com.hook.hive.plugin.SparkSqlMetaStorePreEventListener</value>-->
+    <!--</property>-->
 </configuration>
